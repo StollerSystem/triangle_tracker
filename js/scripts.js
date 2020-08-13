@@ -3,7 +3,7 @@
 function calcTri (side1, side2, side3) {
   let result;    
   if (side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <=side1) {
-    result = "not a Triangle"      
+    result = "not a"      
   }
     else if (side1 === side2 && side2 === side3) {
       result = "equilateral";        
@@ -18,7 +18,8 @@ function calcTri (side1, side2, side3) {
 
 // Interface Logic 
 
-$(document).ready(function() {
+//$(document).ready(function() {
+ window.onload = function() {
   $("#formOne").submit(function(event) {
     event.preventDefault();
     const side1 = parseInt($("#side1").val());
@@ -28,7 +29,7 @@ $(document).ready(function() {
     let result = calcTri(side1, side2, side3);
     $("#result").text("This is a/an " + result + " triangle.");
   });
-});
+};
 
   
  
